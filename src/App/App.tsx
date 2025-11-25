@@ -3,17 +3,18 @@ import Button from "./components/ui/Button/Button";
 function App() {
   return (
     <div>
-      <Button
-        titre="Button1"
-        boolean={true}
-        number={245}
-        str={`khgds${new Date().toISOString()}dcqssd`}
-        function={() => {
-          console.log("coucou");
-        }}
-        object={{ abc: 123, bcf: "toto" }}
-        array={[1, 2, 3, 4]}
-      />
+      <Button type="button">
+        <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" />
+        <div>Clickez ici</div>
+      </Button>
+      <Button>Text</Button>
+      <Button>
+        <div>Button</div>
+      </Button>
+      <Button>
+        <div>Button</div>
+        text
+      </Button>
     </div>
   );
 }
