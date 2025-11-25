@@ -1,0 +1,24 @@
+.Button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 25px 25px 25px grey;
+
+  font-weight: 900;
+  text-decoration: underline;
+
+  background-color: tomato;
+  color: white;
+}
+
+.Button img {
+  height: 24px;
+}
+.Button:hover{
+    border:1px solid grey;
+    box-shadow: 15px 15px 25px grey;
+}
+
+
