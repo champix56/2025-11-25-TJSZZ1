@@ -6,10 +6,15 @@
   overflow-y: scroll;
   padding: 15px;
 }
-.memeContainer {
+.linkMeme {
+  display: block;
   width: 27vw;
-  margin-bottom: 10px;
   max-height: 300px;
+}
+.memeContainer {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
   text-align: center;
   border: 1px solid #acacac;
   border-radius: 8px;
@@ -19,7 +24,6 @@
   height: calc(100% - 40px);
   width: calc(100% - 20px);
 }
-.memeTitre{
-    font-size: x-large;
-
+.memeTitre {
+  font-size: x-large;
 }
