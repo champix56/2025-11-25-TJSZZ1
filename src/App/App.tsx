@@ -17,6 +17,7 @@ function App() {
           <Route Component={Home} path="/" />
           <Route Component={Thumbnail} path="/thumbnail" />
           <Route Component={Editor} path="/edit" />
+          <Route Component={Editor} path="/edit/:id" />
         </Routes>
       <Footer/>
     </FlexV3rdGrow>
