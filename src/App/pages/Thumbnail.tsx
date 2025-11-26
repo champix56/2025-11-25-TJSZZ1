@@ -1,10 +1,8 @@
-import React from 'react'
+import MemeThumbnail from '../components/ui/MemeThumbnail/MemeThumbnail.store'
 
-type Props = {}
-
-const Thumbnail = (props: Props) => {
+const Thumbnail = () => {
   return (
-    <div>Thumbnail</div>
+   <MemeThumbnail/>
   )
 }
 
