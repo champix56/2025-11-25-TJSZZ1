@@ -1,44 +1,23 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import Button from "./components/ui/Button/Button";
-function App() {
-  const [counter, setCounter] = useState(-1);
+import FlexV3rdGrow from "./components/layout/FlexV3rdGrow/FlexV3rdGrow";
+import Navbar from "./components/ui/Navbar/Navbar";
+import Header from "./components/ui/Header/Header";
+import FlexH1stGrow from "./components/layout/FlexH1stGrow/FlexH1stGrow";
+import MemeForm from "./components/MemeForm/MemeForm";
+import MemeSVGViewer from "./components/ui/MemeSVGViewer/MemeSVGViewer";
+import Footer from "./components/ui/Footer/Footer";
 
-  useEffect(() => {
-    console.log('dans le useEffect',counter)
-    return () => {
-      //fonction de demontage
-    };
-  }, [counter])
-  useEffect(() => {
-    //montage initial 
-    setCounter(0);
-  }, [])
-  return (
-    <div>
-      <div style={{ textAlign: "center" }}>counter: {counter}</div>
-      <Button
-        type="button"
-        color="skyblue"
-        onButtonClick={() => {
-          console.log("-1 clické");
-          setCounter(counter - 1);
-          console.log(counter);
-        }}
-      >
-        -1
-      </Button>
-      <Button
-        color="aquamarine"
-        onButtonClick={() => {
-          console.log("+1 clické");
-          setCounter(counter+1);
-          console.log(counter);
-        }}
-      >
-        +1
-      </Button>
-    </div>
-  );
+function App() {
+  return <div className="App">
+    <FlexV3rdGrow>
+      <Header/>
+      <Navbar/>
+      <FlexH1stGrow>
+        <MemeSVGViewer/>
+        <MemeForm/>
+      </FlexH1stGrow>
+      <Footer/>
+    </FlexV3rdGrow>
+  </div>
 }
 export default App;
