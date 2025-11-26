@@ -5,7 +5,7 @@ interface TemplateNameProps {
   children: Array<string | React.ReactElement> | string | React.ReactElement;
 }
 
-const TemplateName: React.FC<TemplateNameProps> = ({ children }) => {
+const TemplateName: React.FC<TemplateNameProps> = ({ children="" }) => {
   return (
     <div className={styles.TemplateName} data-testid="TemplateName">
       {children}
