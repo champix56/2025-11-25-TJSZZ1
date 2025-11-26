@@ -6,9 +6,10 @@ import { update } from '../../store/current';
 
 const MemeForm = (props) => {
   const images=  useSelector(s=>s.ressources.images);
+  const current=  useSelector(s=>s.current.meme);
   const d=useDispatch();
   return (
-    <MemeFormUnconnected {...props} images={images} onMemeChange={(meme:MemeInterface)=>{
+    <MemeFormUnconnected {...props} meme={current} images={images} onMemeChange={(meme:MemeInterface)=>{
         d(update(meme))
     }}/>
   )
