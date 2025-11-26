@@ -6,11 +6,11 @@ interface IButtonProps {
   color?: string;
   type?: "reset" | "submit" | "button";
   children: React.ReactNode | string | Array<React.ReactElement | string>;
-  onButtonClick:()=>void;
+  onButtonClick?:()=>void;
 }
 
 const Button: React.FC<IButtonProps> = ({
-  onButtonClick,
+  onButtonClick=()=>{},
   type = "button",
   children,
   color,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MemeForm.module.css";
 import type { MemeInterface, ImageInterface } from "orsys-tjs-meme";
+import Button from "../ui/Button/Button";
 interface IMemeFormProps {
   meme: MemeInterface;
   images: Array<ImageInterface>
@@ -128,6 +129,8 @@ const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
         <input name="italic" id="italic" type="checkbox"  checked={meme.italic} onChange={onCheckChange}  />
         <hr />
         <br />
+        <Button type="reset" color="tomato">Reinit</Button>
+        <Button type="submit" color="skyblue">save</Button>
       </form>
     </div>
   );
