@@ -33,7 +33,7 @@ const ressources = createSlice({
     });
   },
 });
-const loadRessources = createAsyncThunk("ressourcesLoader", async () => {
+export const loadRessources = createAsyncThunk("ressourcesLoader", async () => {
   const pri = fetch(`${REST_ADR}${REST_RESSOURCES.images}`);
   const prm = fetch(`${REST_ADR}${REST_RESSOURCES.memes}`);
   const prAll = await Promise.all([pri, prm]);
