@@ -9,22 +9,21 @@ import { clear, update } from "../store/current";
 
 const Editor = () => {
   const d: AppDispatch = useDispatch();
-  const params=useParams();
-  const memes=useSelector((s:RootState)=>s.ressources.memes)
-  const navigation=useNavigate()
+  const params = useParams();
+  const memes = useSelector((s: RootState) => s.ressources.memes);
+  const navigation = useNavigate();
   useEffect(() => {
-    if(undefined!==params.id){
-      const memeFound=memes.find(m=>m.id===Number(params.id))
-      if(undefined!==memeFound){
-        d(update(memeFound))}
-      else{
-         navigation('/edit')
+    if (undefined !== params.id) {
+      const memeFound = memes.find((m) => m.id === Number(params.id));
+      if (undefined !== memeFound) {
+        d(update(memeFound));
+      } else {
+        navigation("/edit");
       }
+    } else {
+      d(clear());
     }
-    else{
-      d(clear())
-    }
-  }, [d, params,memes, navigation]);
+  }, [d, params, memes, navigation]);
   return (
     <FlexH1stGrow>
       <MemeSvgViewer basePath="" />
