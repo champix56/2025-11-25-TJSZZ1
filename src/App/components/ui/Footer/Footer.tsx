@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './Footer.module.css'
-interface IFooterProps  {}
 
-const Footer :React.FC<IFooterProps>= ({}) => {
+
+const Footer :React.FC= () => {
   return (
-    <div className={styles.Footer} data-testid="Footer">Footer</div>
+    <div className={styles.Footer} data-testid="Footer">DESORBAIX &copy; 2025 Orsys</div>
   )
 }
 
