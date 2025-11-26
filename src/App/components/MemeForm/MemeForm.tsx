@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MemeForm.module.css";
-import type { MemeInterface } from "orsys-tjs-meme";
+import type { MemeInterface, ImageInterface } from "orsys-tjs-meme";
 interface IMemeFormProps {
   meme: MemeInterface;
+  images: Array<ImageInterface>
   onMemeChange:(meme:MemeInterface)=>void;
 }
-const MemeForm: React.FC<IMemeFormProps> = ({ meme, onMemeChange }) => {
+const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
  // const [state, setState] = useState<MemeInterface>(meme);
   /*useEffect(() => {
     //montage // update
@@ -42,11 +43,12 @@ const MemeForm: React.FC<IMemeFormProps> = ({ meme, onMemeChange }) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
-          <option>futurama1.jpg</option>
-          <option>futurama2.png</option>
-          <option>futurama3.png</option>
-          <option>gwenadu.jpg</option>
+        <select name="image" id="image" value={meme.imageId} onChange={(evt)=>{
+          onMemeChange({...meme,imageId:Number(evt.target.valueF)})
+        }}>
+          <option value={-1}>No image</option>
+
+          {images.map((img)=><option key={'img'+img.id} value={img.id}>{img.name}</option>)}
         </select>
         <hr />
         <label htmlFor="text">
