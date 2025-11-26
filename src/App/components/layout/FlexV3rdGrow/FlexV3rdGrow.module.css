@@ -1,5 +1,6 @@
 .FlexW3rdGrow {
     display: flex;
+    flex-direction: column;
 }
 .FlexW3rdGrow >*:nth-child(3){
     flex-grow: 1;

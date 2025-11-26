@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FlexW3rdGrow.module.css";
+import styles from "./FlexV3rdGrow.module.css";
 
 interface FlexW3rdGrowProps {
   children: Array<string | React.ReactElement> | string | React.ReactElement;
