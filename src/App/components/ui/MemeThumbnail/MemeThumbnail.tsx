@@ -5,6 +5,7 @@ import {
   type ImageInterface,
   type MemeInterface,
 } from "orsys-tjs-meme";
+import { Link } from "react-router";
 interface IMemeThumbnailProps {
   memes: Array<MemeInterface>;
   images: Array<ImageInterface>;
@@ -15,6 +16,7 @@ const MemeThumbnail: React.FC<IMemeThumbnailProps> = ({ memes, images }) => {
     <div className={styles.MemeThumbnail} data-testid="MemeThumbnail">
       {memes.map((meme) => {
         return (
+          <Link className={styles.linkMeme}  to={'/edit/'+meme.id}>
           <div className={styles.memeContainer}>
             <MemeSVGViewer
               meme={meme}
@@ -25,6 +27,7 @@ const MemeThumbnail: React.FC<IMemeThumbnailProps> = ({ memes, images }) => {
               {meme.titre.length > 0 ? meme.titre : "Sans titre"}
             </div>
           </div>
+          </Link>
         );
       })}
     </div>
