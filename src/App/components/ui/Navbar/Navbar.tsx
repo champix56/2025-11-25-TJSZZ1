@@ -13,6 +13,7 @@ const Navbar :React.FC= () => {
           <Nav className="me-auto">
             <Link className='nav-link' to="/">Home</Link>
             <Link className='nav-link' to="/thumbnail">thumbnail</Link>
+            <Link className='nav-link' to="/edit/2">Editer meme:id=2</Link>
             <Link className='nav-link' to="/edit">Nouveau meme ...</Link>
           </Nav>
         </Container>
