@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gen:ui":"npx generate-react-cli c --type=ui",
+    "gen:layout":"npx generate-react-cli c --type=layout",
+    "gen":"npx generate-react-cli c"
   },
   "dependencies": {
     "react": "^19.2.0",
