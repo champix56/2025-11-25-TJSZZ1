@@ -1,11 +1,22 @@
-import React from 'react'
-import styles from './TemplateName.module.css'
-interface ITemplateNameProps{}
+import React, { useEffect, useState } from "react";
+import styles from "./TemplateName.module.css";
+interface ITemplateNameProps {}
+interface ITemplateNameState {}
+const TemplateName: React.FC<ITemplateNameProps> = ({}) => {
+  const [state, setState] = useState<ITemplateNameState>({});
+  useEffect(() => {
+    //montage // update
 
-const TemplateName:React.FC<ITemplateNameProps>=({})=> {
+    return () => {
+      //demontage
+    };
+  }, []);
+
   return (
-    <div className={styles.TemplateName} data-testid="TemplateName">TemplateName</div>
-  )
-}
+    <div className={styles.TemplateName} data-testid="TemplateName">
+      TemplateName
+    </div>
+  );
+};
 
-export default TemplateName
+export default TemplateName;
