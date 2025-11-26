@@ -1,1 +1,25 @@
-.MemeThumbnail {}
+.MemeThumbnail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: calc(100vh - 100px);
+  overflow-y: scroll;
+  padding: 15px;
+}
+.memeContainer {
+  width: 27vw;
+  margin-bottom: 10px;
+  max-height: 300px;
+  text-align: center;
+  border: 1px solid #acacac;
+  border-radius: 8px;
+  padding: 5px;
+}
+.memeContainer svg {
+  height: calc(100% - 40px);
+  width: calc(100% - 20px);
+}
+.memeTitre{
+    font-size: x-large;
+
+}
