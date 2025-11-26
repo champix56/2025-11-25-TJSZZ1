@@ -1,0 +1,6 @@
+.FlexW3rdGrow {
+    display: flex;
+}
+.FlexW3rdGrow >*:nth-child(3){
+    flex-grow: 1;
+}
