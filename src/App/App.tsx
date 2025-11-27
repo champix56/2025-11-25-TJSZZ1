@@ -46,6 +46,7 @@ function App() {
             basePath=""
           />
           <MemeForm
+          images={images}
             meme={current}
             onMemeChange={(newMeme: MemeInterface) => {
               setCurrent(newMeme);

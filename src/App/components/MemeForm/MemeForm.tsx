@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MemeForm.module.css";
-import type { MemeInterface } from "orsys-tjs-meme";
+import type { ImageInterface, MemeInterface } from "orsys-tjs-meme";
 interface IMemeFormProps {
   meme: MemeInterface;
+  images:Array<ImageInterface>
   onMemeChange:(meme:MemeInterface)=>void;
 }
-const MemeForm: React.FC<IMemeFormProps> = ({ meme, onMemeChange }) => {
+const MemeForm: React.FC<IMemeFormProps> = ({ meme,images, onMemeChange }) => {
  // const [state, setState] = useState<MemeInterface>(meme);
   /*useEffect(() => {
     //montage // update
@@ -15,7 +16,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({ meme, onMemeChange }) => {
       //demontage
     };
   }, [state]);*/
-  const onNumberChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const onNumberChange = (evt: React.ChangeEvent<HTMLInputElement|HTMLSelectElement>) => {
     const s = { ...meme };
     s[evt.target.name] = parseInt(evt.target.value);
     //setState(s);
@@ -42,11 +43,21 @@ const MemeForm: React.FC<IMemeFormProps> = ({ meme, onMemeChange }) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
-          <option>futurama1.jpg</option>
-          <option>futurama2.png</option>
-          <option>futurama3.png</option>
-          <option>gwenadu.jpg</option>
+        <select name="imageId" id="imageId"
+        value={meme.imageId}
+        onChange={
+          onNumberChange
+      /*    evt=>{
+          const ev2={...evt, target:{...evt.target,name:"imageId"}}
+          evt.target.name="imageId";
+          onNumberChange(ev2);
+        }*/
+      }
+        >
+          <option value={-1}>No images</option>
+          {
+            images.map(img=><option key={img.id } value={img.id}>{img.name}</option>)
+          }
         </select>
         <hr />
         <label htmlFor="text">
