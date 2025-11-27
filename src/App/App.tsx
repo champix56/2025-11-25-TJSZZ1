@@ -1,13 +1,14 @@
 import "./App.css";
+import './store/store.ts'
 import FlexV3rdGrow from "./components/layout/FlexV3rdGrow/FlexV3rdGrow";
 import Navbar from "./components/ui/Navbar/Navbar";
 import Header from "./components/ui/Header/Header";
 import FlexH1stGrow from "./components/layout/FlexH1stGrow/FlexH1stGrow";
 import MemeForm from "./components/MemeForm/MemeForm";
 import Footer from "./components/ui/Footer/Footer";
+import MemeSVGViewer from './components/ui/MemeSVGViewer/MemeSVGViewer.connected'
 import {
   emptyMeme,
-  MemeSVGViewer,
   type ImageInterface,
   type MemeInterface,
 } from "orsys-tjs-meme";
@@ -35,16 +36,11 @@ function App() {
 
   return (
     <div className="App">
-      {JSON.stringify(images)}
       <FlexV3rdGrow>
         <Header />
         <Navbar />
         <FlexH1stGrow>
-          <MemeSVGViewer
-            image={images.find((img) => img.id === current.imageId)}
-            meme={current}
-            basePath=""
-          />
+          <MemeSVGViewer/>
           <MemeForm
           images={images}
             meme={current}
