@@ -6,8 +6,9 @@ interface IMemeFormProps {
   meme: MemeInterface;
   images: Array<ImageInterface>;
   onMemeChange: (meme: MemeInterface) => void;
+  onMemeSave:(meme:MemeInterface)=>void;
 }
-const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
+const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange, onMemeSave }) => {
   
   const onNumberChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const s = { ...meme };
@@ -28,6 +29,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
+          onMemeSave(meme);
         }}
         onReset={() => {
           console.log("gestion reset ");

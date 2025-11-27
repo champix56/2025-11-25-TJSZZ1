@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import MemeFormUnconnected from './MemeForm'
 import type { MemeInterface } from 'orsys-tjs-meme'
-import { update } from '../../store/current';
+import { save, update } from '../../store/current';
 import type { AppDispatch, RootState } from '../../store/store';
 
 
@@ -11,8 +11,12 @@ const MemeForm = (props) => {
   const d:AppDispatch=useDispatch();
   return (
     <MemeFormUnconnected {...props} meme={current} images={images} onMemeChange={(meme:MemeInterface)=>{
-        d(update(meme))
-    }}/>
+        d(update(meme));
+    }}
+    onMemeSave={(meme)=>{
+      d(save(meme));
+    }}
+    />
   )
 }
 
