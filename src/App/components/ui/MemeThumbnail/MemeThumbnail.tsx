@@ -16,7 +16,7 @@ const MemeThumbnail: React.FC<IMemeThumbnailProps> = ({ memes, images }) => {
     <div className={styles.MemeThumbnail} data-testid="MemeThumbnail">
       {memes.map((meme) => {
         return (
-          <Link className={styles.linkMeme}  to={'/edit/'+meme.id}>
+          <Link className={styles.linkMeme}  to={'/Editor/'+meme.id}>
           <div className={styles.memeContainer}>
             <MemeSVGViewer
               meme={meme}
@@ -24,7 +24,7 @@ const MemeThumbnail: React.FC<IMemeThumbnailProps> = ({ memes, images }) => {
               basePath=""
             />
             <div className={styles.memeTitre}>
-              {meme.titre.length > 0 ? meme.titre : "Sans titre"}
+              {meme.titre&&meme.titre.length > 0 ? meme.titre : "Sans titre"}
             </div>
           </div>
           </Link>
