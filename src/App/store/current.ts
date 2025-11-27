@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { buildCreateApi } from "@reduxjs/toolkit/query";
 import { emptyMeme, type MemeInterface } from "orsys-tjs-meme";
 import { REST_ADR, REST_RESSOURCES } from "../constantes/config";
 
