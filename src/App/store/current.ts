@@ -34,6 +34,7 @@ export const save = createAsyncThunk(
       {
         method: meme.id !== undefined ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
+        body:JSON.stringify(meme)
       }
     );
     return await pr.json();
